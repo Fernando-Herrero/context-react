@@ -1,4 +1,5 @@
 import "./App.css";
+import { CartItems } from "./components/CartItems/CartItems";
 import { LanguageTranslate } from "./components/LanguageTranslate.jsx/LanguageTranslate";
 import { LoginForm } from "./components/LoginForm/LoginForm";
 import { ToggleButtonTheme } from "./components/ToggleButtonTheme/ToggleButtonTheme";
@@ -12,6 +13,7 @@ export const App = () => {
 			<LanguageProvider>
 				<LanguageTranslate />
 			</LanguageProvider>
+			<CartItems />
 		</div>
 	);
 };
