@@ -1,0 +1,27 @@
+.language-translate-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	width: 60%;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+html.dark .language-translate-container {
+	border-color: pink;
+}
+
+.language-translate-container select {
+	flex: 1;
+	height: 20px;
+}
+.language-translate-container div {
+	border-right: 1px solid black;
+	flex: 4;
+}
+
+html.dark .language-translate-container div {
+	border-right-color: pink;
+}

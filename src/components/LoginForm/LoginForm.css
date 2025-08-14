@@ -1,0 +1,44 @@
+.user-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	width: 30%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+html.dark .user-form {
+    border-color: pink;
+}
+
+.user-form label,
+select {
+	display: flex;
+	flex-direction: column;
+}
+
+.user-form h3 {
+	margin: 0;
+    padding-top: 10px;
+}
+
+.is-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid black; 
+    border-radius: 10px;
+}
+
+html.dark .is-login{
+    border-color: pink;
+}
+
+.is-login h3 {
+    margin: 0;
+}
