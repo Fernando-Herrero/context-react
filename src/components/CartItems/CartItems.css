@@ -12,6 +12,10 @@
 	width: 300px;
 }
 
+html.dark .cart-items p {
+	color: black;
+}
+
 .cart-items li {
 	display: flex;
 	justify-content: space-between;
@@ -71,6 +75,16 @@
 	justify-content: flex-end;
 	font-size: 1.2rem;
 	margin-bottom: 1rem;
+}
+
+html.dark .img-cart {
+	padding: 10px;
+	background-color: #f9f9f9;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	color: black;
+	max-width: fit-content;
+	justify-self: end;
 }
 
 .img-cart span {
