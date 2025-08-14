@@ -1,11 +1,10 @@
-import './App.css'
+import "./App.css";
+import { ToggleButtonTheme } from "./components/ToggleButtonTheme/ToggleButtonTheme";
 
 export const App = () => {
-  return (
-    <>
-      <h1>Context</h1>
-    </>
-  )
-}
-
-
+	return (
+		<div className="app-container">
+			<ToggleButtonTheme />
+		</div>
+	);
+};
