@@ -3,7 +3,7 @@ import "./LoginForm.css";
 import { UserContext } from "../../context/UserContext";
 
 export const LoginForm = () => {
-	const { user, login, logout, isLogin, handleInputChange } = useContext(UserContext);
+	const { user, login, logout, isLogin, handleInputChange, error } = useContext(UserContext);
 	console.log(useContext(UserContext));
 	const { name, surname, password, role } = user;
 
@@ -48,6 +48,8 @@ export const LoginForm = () => {
 					</select>
 
 					<button type="submit">Login</button>
+
+					{error && <p style={{ color: "red" }}>{error}</p>}
 				</form>
 			)}
 
