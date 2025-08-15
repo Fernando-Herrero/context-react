@@ -43,6 +43,7 @@ export const LoginForm = () => {
 						<option value="" disabled>
 							--Select a role--
 						</option>
+						<option value="guest">Guest</option>
 						<option value="user">User</option>
 						<option value="admin">Admin</option>
 					</select>
