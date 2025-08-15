@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import "./CartItems.css";
 import { CartContext } from "../../context/CartContext";
+import { EditableCartList } from "../EditableCartList/EditableCartList";
+import { SummaryCartList } from "../SummaryCartList/SummaryCartList";
 
 export const CartItems = () => {
 	const { items, totalItems, handleInputQty, handleAddCart, handleRemoveItem, handleClearCart } =
@@ -10,22 +12,7 @@ export const CartItems = () => {
 
 	return (
 		<div className="cart-items-container">
-			<ul className="cart-items">
-				{items.map(({ id, name, qty }) => (
-					<li key={id}>
-						<p>{name}</p>
-						<div className="cart-it">
-							<input
-								type="number"
-								value={qty}
-								onChange={(e) => handleInputQty(id, e.target.value)}
-								min="0"
-							/>
-							<button onClick={() => handleAddCart(id)}>Add</button>
-						</div>
-					</li>
-				))}
-			</ul>
+			<EditableCartList items={items} onQtyChange={handleInputQty} onAdd={handleAddCart} />
 
 			<div className="cart-items-bought">
 				<div className="cart-img-list">
@@ -33,22 +20,14 @@ export const CartItems = () => {
 						🛒<span>{totalQty}</span>
 					</div>
 
-					{totalItems.length > 0 && (
-						<ul>
-							{totalItems.map(({ id, name, cartQty }) => (
-								<li key={id}>
-									<p>{name} →</p>
-									<span>{cartQty}</span>
-									<button className="remove-btn" onClick={() => handleRemoveItem(id)}>
-										Remove
-									</button>
-								</li>
-							))}
-						</ul>
-					)}
+					{totalItems.length > 0 && <SummaryCartList totalItems={totalItems} onRemove={handleRemoveItem} />}
 				</div>
 
-				{totalItems.length > 0 && <button className="clear-btn" onClick={handleClearCart}>Clear cart</button>}
+				{totalItems.length > 0 && (
+					<button className="clear-btn" onClick={handleClearCart}>
+						Clear cart
+					</button>
+				)}
 			</div>
 		</div>
 	);
